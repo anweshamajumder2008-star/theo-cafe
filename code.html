@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Theo Cafe | Find Your Zen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#c0c8c5",
+                        "on-primary-fixed": "#012116",
+                        "background": "#faf9f6",
+                        "on-tertiary-fixed": "#161d1c",
+                        "surface-container": "#efeeeb",
+                        "on-secondary-fixed": "#2f1314",
+                        "surface-container-high": "#e9e8e5",
+                        "secondary": "#7b5455",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#29312f",
+                        "secondary-fixed-dim": "#ecbaba",
+                        "surface-container-low": "#f4f3f1",
+                        "surface-bright": "#faf9f6",
+                        "on-tertiary-container": "#adb5b2",
+                        "on-surface-variant": "#424844",
+                        "on-tertiary-fixed-variant": "#404846",
+                        "primary-fixed-dim": "#adcebd",
+                        "on-background": "#1a1c1a",
+                        "on-secondary-container": "#7a5354",
+                        "on-surface": "#1a1c1a",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#c8ead8",
+                        "on-primary-fixed-variant": "#2f4d40",
+                        "surface-tint": "#466557",
+                        "on-primary": "#ffffff",
+                        "primary": "#163428",
+                        "surface-dim": "#dbdad7",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#99baa9",
+                        "secondary-container": "#fecbcb",
+                        "outline": "#727974",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e3e2e0",
+                        "inverse-primary": "#adcebd",
+                        "secondary-fixed": "#ffdad9",
+                        "primary-container": "#2d4b3e",
+                        "tertiary-container": "#3f4745",
+                        "tertiary-fixed": "#dce4e1",
+                        "surface-variant": "#e3e2e0",
+                        "outline-variant": "#c1c8c3",
+                        "on-secondary-fixed-variant": "#613d3e",
+                        "inverse-on-surface": "#f2f1ee",
+                        "surface": "#faf9f6",
+                        "inverse-surface": "#2f312f",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "container-max": "1200px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Libre Caslon Text"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "title-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+    </style>
+</head>
+<body class="antialiased font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface/60 backdrop-blur-lg dark:bg-inverse-surface/60 docked full-width top-0 sticky z-50 no borders tonal-layering shadow-sm dark:shadow-none flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-display-lg text-headline-lg tracking-tight text-primary dark:text-primary-fixed" href="#">Theo Cafe</a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-primary font-bold border-b-2 border-primary pb-1 font-title-md text-title-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-title-md text-title-md" href="#">Menu</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-title-md text-title-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-title-md text-title-md" href="#">Contact</a>
+</div>
+<!-- Mobile Menu Icon (Visual Only) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 w-full h-full">
+<img alt="A beautiful garden entrance to a cafe, with white archways covered in lush green vines and blooming pink flowers. A stone pathway leads inside to a serene, airy dining area." class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPGiF0K5xkw2_6_sZnZYiGLcL2MxaVxf_rVpVBejz3oT8pAeqMwPZ4TvQWjr38ipmhTRihjScZU-Q0ZGr56HLdJNxulQfImiwsznB3c_2aaPlGESJt0NDuOG4Wc7GfvlUFAmcE1SnrPdr55G9GH3FJExVtioX4lLo63igp1P7dkidEM8C2LJHJEsxt73KmY_IppjxyzSjHlRSoBfVgKAmyyABkzk-DhvHoFR7yIStXsOviEwmih9rZa151hqOaEXsWoQ"/>
+<!-- Soft overlay for text readability -->
+<div class="absolute inset-0 bg-background/30 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-3xl mx-auto">
+<h1 class="font-display-lg text-display-lg md:text-[64px] leading-tight text-primary mb-6 drop-shadow-md">Find Your Zen at Theo Cafe</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl mx-auto">A sanctuary of culinary delight nestled in a lush, botanical atmosphere. Experience minimal aesthetic and maximum flavor.</p>
+<a class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 font-title-md text-title-md group" href="#">
+                Explore Menu
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- About Section (Botanical Vibe) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1 relative">
+<!-- Aesthetic decorative blob/shape behind image could go here -->
+<div class="absolute -inset-4 bg-tertiary-fixed-dim rounded-[2rem] -z-10 blur-xl opacity-50"></div>
+<img class="w-full h-auto rounded-3xl object-cover shadow-[0_20px_40px_rgba(45,75,62,0.08)]" data-alt="A sunlit, airy interior of a cafe with minimalist wooden furniture, large arched windows, and numerous potted green plants. The atmosphere is calm, warm, and inviting, with soft natural light filtering through the leaves." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm20g59b_gXYYHVpJzy1UuM7DLRgmUm590CCdJdc7yURZyvuRwEGyN1N500KozsrnrNJLHAAiLTv13KAW_vEDbipkPfwjWSdaULYNTuD8kiDFE9fUpVZ4dUFEypDfglH59BJ_r5munt_2MYC9OlYkWGft4zamWwYkONzn-dMydgbhOeFFo-ZQNFzNaWVOuELRE8IMSpLAWUYUpnMo9XL6ixLux4V1gslt0pGU-hCLBcqZA4XwH50lm"/>
+</div>
+<div class="order-1 md:order-2 space-y-6">
+<span class="text-secondary font-label-sm uppercase tracking-wider">Our Story</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">A Retreat for the Senses</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Theo Cafe was born from a simple idea: that dining should be an escape. We've crafted an environment that blends the serenity of a blooming garden with the refined simplicity of minimalist design. 
+                </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Every dish is prepared with mindfulness, honoring seasonal ingredients and presented with artistic care. Slow down, breathe deeply, and savor the moment in our glass-enclosed sanctuary.
+                </p>
+<a class="inline-flex items-center gap-2 text-primary font-title-md text-title-md hover:text-secondary transition-colors border-b border-transparent hover:border-secondary pb-1" href="#">
+                    Discover our philosophy
+                    <span class="material-symbols-outlined text-sm">chevron_right</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Chef's Specials (Bento Grid Style) -->
+<section class="py-section-gap bg-surface-container-low px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<span class="text-secondary font-label-sm uppercase tracking-wider mb-2 block">Curated Flavors</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Chef's Selection</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+<!-- Main Feature -->
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-3xl bg-tertiary">
+<img alt="A hearty and elegant cafe meal featuring a perfectly cooked steak, a scoop of mashed potatoes with herbs, a small bowl of rich brown gravy, roasted vegetables, a mound of herbed rice, and a slice of garlic bread, presented on a dark blue plate on a wooden table." class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBXViF2_PbfvKGE3BECFhKW3c-8Q2-iHiNi93TodK32yIMbuGisojliP1zHgN-9Igz3o2clMK3Chgn-9sBlSdH63byNE888mhTrzSu4O6qJTeeSJdrJt_NrGm1p7_XqE__VkOL-VdR8g48g6rJOhSvXT-YX85Xp2e1gWuMsi2NepisVeqoFo34th0M91ZHrFPotGzVcIKntds8D54faAMq2l9K3cCu-tr_c8T6kzhhXf1fsCmbpBMCZCqIsD6Sk4LmUQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full font-label-sm mb-4 inline-block">Signature</span>
+<h3 class="font-headline-lg text-headline-lg text-on-primary mb-2">The Garden Steak &amp; Herbs</h3>
+<p class="font-body-md text-body-md text-on-primary/90">A harmonious blend of earthy flavors, featuring our house-cut steak, herbed rice, and roasted seasonal root vegetables.</p>
+</div>
+</div>
+<!-- Secondary Feature -->
+<div class="relative group overflow-hidden rounded-3xl bg-surface">
+<img alt="A vibrant, multi-layered sunset mocktail in a tall glass, transitioning from deep red at the bottom to bright orange at the top, garnished with a slice of fresh orange. Set against a soft, blurred background of lush green cafe plants." class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxauOeclKs94_4GPn4P_wm2u2WDNKqeMYUGvYGmm9qfehYkELrtrWGQ3vs2CTBw10rxTVITmsXGBN65mGIoo0KQF6PEr9rtda2aoSuk84GXnfWBYSu6oqUq0QvDKNL3pNYIQVWEE_TYRajGs_eXXbhDntwv2nZE3h12gTun1jbpma52uy3QqJe9fhcM9bIJm6GEZIw2OeZIHlBBGbeQGHRE6tQp154rqwwys0XJ4aqfKIR5irF1tWkoujFHAcijBf8Ag"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h3 class="font-title-md text-title-md text-on-primary mb-1">Sunset Citrus Refresher</h3>
+<p class="font-label-sm text-on-primary/80">House-made botanical syrups</p>
+</div>
+</div>
+<!-- Third Item (Placeholder to complete grid) -->
+<div class="relative group overflow-hidden rounded-3xl bg-surface-container flex items-center justify-center p-8 text-center border border-outline-variant/30 hover:bg-surface-container-high transition-colors">
+<div>
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">restaurant_menu</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-2">Explore the Full Menu</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Discover our range of mindful pastries, artisan coffees, and seasonal mains.</p>
+<a class="text-secondary font-title-md hover:underline" href="#">View Menu</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-high full-width rounded-t-xl no borders flat grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto text-on-surface dark:text-on-surface font-body-md text-body-md">
+<div class="col-span-1 md:col-span-2">
+<h2 class="font-display-lg text-headline-lg text-primary mb-4">Theo Cafe</h2>
+<p class="text-on-surface-variant max-w-sm mb-6">A sanctuary of minimal aesthetic and botanical flavors. Find your zen with every bite.</p>
+<p class="text-on-surface-variant font-label-sm">© 2024 Theo Cafe. All rights reserved.</p>
+</div>
+<div class="col-span-1">
+<h4 class="font-title-md text-primary mb-4">Links</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Menu</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">About</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-title-md text-primary mb-4">Visit Us</h4>
+<p class="text-on-surface-variant mb-2">123 Botanical Way<br/>Greenwich, CT 06830</p>
+<p class="text-on-surface-variant">hello@theocafe.com<br/>+1 (555) 123-4567</p>
+</div>
+</footer>
+</body></html>

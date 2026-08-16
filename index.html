@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Theo Cafe | Find Your Zen</title>
+  <meta name="description"
+    content="A sanctuary of minimal aesthetic and botanical flavors. Find your zen with every bite at Theo Cafe." />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#c0c8c5",
+            "on-primary-fixed": "#012116",
+            "background": "#faf9f6",
+            "on-tertiary-fixed": "#161d1c",
+            "surface-container": "#efeeeb",
+            "on-secondary-fixed": "#2f1314",
+            "surface-container-high": "#e9e8e5",
+            "secondary": "#7b5455",
+            "on-secondary": "#ffffff",
+            "tertiary": "#29312f",
+            "secondary-fixed-dim": "#ecbaba",
+            "surface-container-low": "#f4f3f1",
+            "surface-bright": "#faf9f6",
+            "on-tertiary-container": "#adb5b2",
+            "on-surface-variant": "#424844",
+            "on-tertiary-fixed-variant": "#404846",
+            "primary-fixed-dim": "#adcebd",
+            "on-background": "#1a1c1a",
+            "on-secondary-container": "#7a5354",
+            "on-surface": "#1a1c1a",
+            "on-error": "#ffffff",
+            "primary-fixed": "#c8ead8",
+            "on-primary-fixed-variant": "#2f4d40",
+            "surface-tint": "#466557",
+            "on-primary": "#ffffff",
+            "primary": "#163428",
+            "surface-dim": "#dbdad7",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-container": "#99baa9",
+            "secondary-container": "#fecbcb",
+            "outline": "#727974",
+            "on-error-container": "#93000a",
+            "surface-container-highest": "#e3e2e0",
+            "inverse-primary": "#adcebd",
+            "secondary-fixed": "#ffdad9",
+            "primary-container": "#2d4b3e",
+            "tertiary-container": "#3f4745",
+            "tertiary-fixed": "#dce4e1",
+            "surface-variant": "#e3e2e0",
+            "outline-variant": "#c1c8c3",
+            "on-secondary-fixed-variant": "#613d3e",
+            "inverse-on-surface": "#f2f1ee",
+            "surface": "#faf9f6",
+            "inverse-surface": "#2f312f",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "section-gap": "80px",
+            "container-max": "1200px",
+            "unit": "8px",
+            "margin-mobile": "20px",
+            "margin-desktop": "64px"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Libre Caslon Text"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Libre Caslon Text"],
+            "headline-lg": ["Libre Caslon Text"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: theme('colors.background');
+      color: theme('colors.on-background');
+    }
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link.active {
+      color: theme('colors.primary');
+      font-weight: 700;
+      border-bottom: 2px solid theme('colors.primary');
+    }
+
+    .nav-link:not(.active) {
+      color: theme('colors.on-surface-variant');
+      border-bottom: 2px solid transparent;
+    }
+  </style>
+</head>
+
+<body class="antialiased font-body-md text-body-md overflow-x-hidden relative">
+
+  <!-- Header / Navigation -->
+  <nav
+    class="bg-surface/80 backdrop-blur-md dark:bg-inverse-surface/80 sticky top-0 z-50 transition-all duration-300 border-b border-outline-variant/20 shadow-sm">
+    <div
+      class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a class="font-display-lg text-headline-lg tracking-tight text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity"
+        href="#home">
+        Theo Cafe
+      </a>
+
+      <!-- Desktop Nav Links (Dynamic scroll spy active state) -->
+      <div class="hidden md:flex items-center space-x-8" id="desktop-nav">
+        <a class="nav-link active pb-1 font-title-md text-title-md" href="#home" data-section="home">Home</a>
+        <a class="nav-link pb-1 font-title-md text-title-md" href="#about" data-section="about">About</a>
+        <a class="nav-link pb-1 font-title-md text-title-md" href="#specials" data-section="specials">Specials</a>
+        <a class="nav-link pb-1 font-title-md text-title-md" href="#menu" data-section="menu">Menu</a>
+        <a class="nav-link pb-1 font-title-md text-title-md" href="#contact" data-section="contact">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn"
+        class="md:hidden text-primary focus:outline-none p-2 rounded-lg hover:bg-surface-container transition-colors"
+        aria-label="Toggle Navigation Menu">
+        <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobile-menu"
+      class="hidden md:hidden bg-surface/95 backdrop-blur-lg border-t border-outline-variant/20 px-margin-mobile py-6 space-y-4 shadow-xl">
+      <a class="mobile-nav-item block text-primary font-bold text-lg py-2 border-b border-outline-variant/10"
+        href="#home" data-section="home" onclick="toggleMobileMenu()">Home</a>
+      <a class="mobile-nav-item block text-on-surface-variant text-lg py-2 border-b border-outline-variant/10"
+        href="#about" data-section="about" onclick="toggleMobileMenu()">About</a>
+      <a class="mobile-nav-item block text-on-surface-variant text-lg py-2 border-b border-outline-variant/10"
+        href="#specials" data-section="specials" onclick="toggleMobileMenu()">Specials</a>
+      <a class="mobile-nav-item block text-on-surface-variant text-lg py-2 border-b border-outline-variant/10"
+        href="#menu" data-section="menu" onclick="toggleMobileMenu()">Menu</a>
+      <a class="mobile-nav-item block text-on-surface-variant text-lg py-2 border-b border-outline-variant/10"
+        href="#contact" data-section="contact" onclick="toggleMobileMenu()">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <!-- Background Image with fallback -->
+    <div class="absolute inset-0 w-full h-full">
+      <img alt="A beautiful garden entrance to a cafe with lush green vines and blooming flowers"
+        class="absolute inset-0 w-full h-full object-cover"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPGiF0K5xkw2_6_sZnZYiGLcL2MxaVxf_rVpVBejz3oT8pAeqMwPZ4TvQWjr38ipmhTRihjScZU-Q0ZGr56HLdJNxulQfImiwsznB3c_2aaPlGESJt0NDuOG4Wc7GfvlUFAmcE1SnrPdr55G9GH3FJExVtioX4lLo63igp1P7dkidEM8C2LJHJEsxt73KmY_IppjxyzSjHlRSoBfVgKAmyyABkzk-DhvHoFR7yIStXsOviEwmih9rZa151hqOaEXsWoQ"
+        onerror="this.onerror=null; this.src='bg.jpg';" />
+      <!-- Soft overlay for text readability -->
+      <div class="absolute inset-0 bg-background/35 backdrop-blur-[2px]"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-3xl mx-auto scroll-reveal">
+      <span
+        class="inline-block bg-primary/10 text-primary border border-primary/20 px-4 py-1.5 rounded-full font-label-sm uppercase tracking-widest mb-6 backdrop-blur-md">
+        Botanical & Minimalist Sanctuary
+      </span>
+      <h1 class="font-display-lg text-display-lg md:text-[64px] leading-tight text-primary mb-6 drop-shadow-md">
+        Find Your Zen at Theo Cafe
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl mx-auto drop-shadow-sm">
+        A sanctuary of culinary delight nestled in a lush, botanical atmosphere. Experience minimal aesthetic and
+        maximum flavor.
+      </p>
+      <div class="flex items-center justify-center">
+        <a class="inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 font-title-md text-title-md group"
+          href="#menu">
+          Explore Menu
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section (Botanical Vibe) -->
+  <section id="about" class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="order-2 md:order-1 relative scroll-reveal">
+        <div class="absolute -inset-4 bg-tertiary-fixed-dim rounded-[2.5rem] -z-10 blur-xl opacity-60"></div>
+        <img
+          class="w-full h-auto rounded-3xl object-cover shadow-[0_20px_40px_rgba(45,75,62,0.12)] border border-outline-variant/30"
+          alt="Sunlit airy interior of Theo Cafe with minimalist wooden furniture and potted plants"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm20g59b_gXYYHVpJzy1UuM7DLRgmUm590CCdJdc7yURZyvuRwEGyN1N500KozsrnrNJLHAAiLTv13KAW_vEDbipkPfwjWSdaULYNTuD8kiDFE9fUpVZ4dUFEypDfglH59BJ_r5munt_2MYC9OlYkWGft4zamWwYkONzn-dMydgbhOeFFo-ZQNFzNaWVOuELRE8IMSpLAWUYUpnMo9XL6ixLux4V1gslt0pGU-hCLBcqZA4XwH50lm"
+          onerror="this.onerror=null; this.src='bg2.webp';" />
+      </div>
+      <div class="order-1 md:order-2 space-y-6 scroll-reveal">
+        <span class="text-secondary font-label-sm uppercase tracking-widest font-semibold block">Our Story</span>
+        <h2 class="font-headline-lg text-headline-lg text-primary md:text-4xl">A Retreat for the Senses</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Theo Cafe was born from a simple idea: that dining should be an escape. We've crafted an environment that
+          blends the serenity of a blooming garden with the refined simplicity of minimalist design.
+        </p>
+        <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Every dish is prepared with mindfulness, honoring seasonal ingredients and presented with artistic care. Slow
+          down, breathe deeply, and savor the moment in our glass-enclosed sanctuary.
+        </p>
+        <button onclick="openModal('philosophy-modal')"
+          class="inline-flex items-center gap-2 text-primary font-title-md text-title-md hover:text-secondary transition-colors border-b border-primary/30 hover:border-secondary pb-1 group">
+          Discover our philosophy
+          <span
+            class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">chevron_right</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chef's Specials (Bento Grid Style) -->
+  <section id="specials" class="py-section-gap bg-surface-container-low px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-container-max mx-auto">
+      <div class="text-center mb-16 scroll-reveal">
+        <span class="text-secondary font-label-sm uppercase tracking-widest font-semibold mb-2 block">Curated
+          Flavors</span>
+        <h2 class="font-headline-lg text-headline-lg text-primary md:text-4xl">Chef's Selection</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[320px] scroll-reveal">
+        <!-- Main Feature -->
+        <div
+          class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-3xl bg-tertiary cursor-pointer shadow-md hover:shadow-xl transition-all duration-500"
+          onclick="openDishModal('The Garden Steak & Herbs', 'A harmonious blend of earthy flavors, featuring our house-cut steak, herbed rice, and roasted seasonal root vegetables.', 'bg3.jpg')">
+          <img alt="The Garden Steak & Herbs dish"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBXViF2_PbfvKGE3BECFhKW3c-8Q2-iHiNi93TodK32yIMbuGisojliP1zHgN-9Igz3o2clMK3Chgn-9sBlSdH63byNE888mhTrzSu4O6qJTeeSJdrJt_NrGm1p7_XqE__VkOL-VdR8g48g6rJOhSvXT-YX85Xp2e1gWuMsi2NepisVeqoFo34th0M91ZHrFPotGzVcIKntds8D54faAMq2l9K3cCu-tr_c8T6kzhhXf1fsCmbpBMCZCqIsD6Sk4LmUQ"
+            onerror="this.onerror=null; this.src='bg3.jpg';" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8 w-full">
+            <h3 class="font-headline-lg text-headline-lg text-on-primary mb-2">The Garden Steak &amp; Herbs</h3>
+            <p class="font-body-md text-body-md text-on-primary/90 max-w-xl">A harmonious blend of earthy flavors,
+              featuring our house-cut steak, herbed rice, and roasted seasonal root vegetables.</p>
+          </div>
+        </div>
+
+        <!-- Secondary Feature -->
+        <div
+          class="relative group overflow-hidden rounded-3xl bg-surface cursor-pointer shadow-md hover:shadow-xl transition-all duration-500"
+          onclick="openDishModal('Sunset Citrus Refresher', 'House-made botanical syrups infused with orange blossoms and blood orange, topped with sparkling tonic.', 'bg4.webp')">
+          <img alt="Sunset Citrus Refresher"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxauOeclKs94_4GPn4P_wm2u2WDNKqeMYUGvYGmm9qfehYkELrtrWGQ3vs2CTBw10rxTVITmsXGBN65mGIoo0KQF6PEr9rtda2aoSuk84GXnfWBYSu6oqUq0QvDKNL3pNYIQVWEE_TYRajGs_eXXbhDntwv2nZE3h12gTun1jbpma52uy3QqJe9fhcM9bIJm6GEZIw2OeZIHlBBGbeQGHRE6tQp154rqwwys0XJ4aqfKIR5irF1tWkoujFHAcijBf8Ag"
+            onerror="this.onerror=null; this.src='bg4.webp';" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-primary/20 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 w-full">
+            <h3 class="font-title-md text-title-md text-on-primary mb-1">Sunset Citrus Refresher</h3>
+            <p class="font-label-sm text-on-primary/80">House-made botanical syrups</p>
+          </div>
+        </div>
+
+        <!-- Third Item (Full Menu Link) -->
+        <div
+          class="relative group overflow-hidden rounded-3xl bg-surface-container flex items-center justify-center p-8 text-center border border-outline-variant/40 hover:bg-surface-container-high transition-colors shadow-sm">
+          <div>
+            <div
+              class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-primary text-3xl">restaurant_menu</span>
+            </div>
+            <h3 class="font-title-md text-title-md text-primary mb-2">Explore the Full Menu</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Discover our range of mindful pastries,
+              artisan coffees, and seasonal mains.</p>
+            <a class="inline-flex items-center gap-1 text-secondary font-title-md hover:underline" href="#menu">
+              View Menu
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Menu Section -->
+  <section id="menu" class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <div class="text-center mb-12 scroll-reveal">
+      <span class="text-secondary font-label-sm uppercase tracking-widest font-semibold mb-2 block">Mindful
+        Creations</span>
+      <h2 class="font-headline-lg text-headline-lg text-primary md:text-4xl mb-6">Seasonal Menu</h2>
+
+      <!-- Category Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 md:gap-4 max-w-xl mx-auto">
+        <button onclick="filterMenu('all')"
+          class="menu-tab px-5 py-2 rounded-full font-title-md text-sm transition-all bg-primary text-on-primary shadow-sm"
+          id="tab-all">All Items</button>
+        <button onclick="filterMenu('mains')"
+          class="menu-tab px-5 py-2 rounded-full font-title-md text-sm transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high"
+          id="tab-mains">Mains</button>
+        <button onclick="filterMenu('drinks')"
+          class="menu-tab px-5 py-2 rounded-full font-title-md text-sm transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high"
+          id="tab-drinks">Drinks</button>
+        <button onclick="filterMenu('pastries')"
+          class="menu-tab px-5 py-2 rounded-full font-title-md text-sm transition-all bg-surface-container text-on-surface-variant hover:bg-surface-container-high"
+          id="tab-pastries">Pastries</button>
+      </div>
+    </div>
+
+    <!-- Menu Items Grid (Clean display without prices or tags) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 scroll-reveal" id="menu-grid">
+      <!-- Item 1 -->
+      <div
+        class="menu-item category-mains bg-surface p-6 rounded-2xl border border-outline-variant/30 hover:shadow-lg transition-all flex flex-col sm:flex-row gap-4 items-center cursor-pointer"
+        onclick="openDishModal('Botanical Avocado Toast', 'Sourdough, whipped goat cheese, microgreens, edible flowers, and chili crunch oil.', 'bg3.jpg')">
+        <img src="bg3.jpg" alt="Botanical Avocado Toast" class="w-full sm:w-28 h-28 object-cover rounded-xl shrink-0" />
+        <div class="flex-1 w-full">
+          <h3 class="font-title-md text-title-md text-primary mb-2">Botanical Avocado Toast</h3>
+          <p class="font-body-md text-sm text-on-surface-variant">Sourdough, whipped goat cheese, microgreens, edible
+            flowers, and chili crunch oil.</p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div
+        class="menu-item category-drinks bg-surface p-6 rounded-2xl border border-outline-variant/30 hover:shadow-lg transition-all flex flex-col sm:flex-row gap-4 items-center cursor-pointer"
+        onclick="openDishModal('Rose Hibiscus Matcha', 'Ceremonial grade Uji matcha layered with organic rose hibiscus syrup and oat milk.', 'bg4.webp')">
+        <img src="bg4.webp" alt="Rose Hibiscus Matcha" class="w-full sm:w-28 h-28 object-cover rounded-xl shrink-0" />
+        <div class="flex-1 w-full">
+          <h3 class="font-title-md text-title-md text-primary mb-2">Rose Hibiscus Matcha</h3>
+          <p class="font-body-md text-sm text-on-surface-variant">Ceremonial grade Uji matcha layered with organic rose
+            hibiscus syrup and oat milk.</p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div
+        class="menu-item category-pastries bg-surface p-6 rounded-2xl border border-outline-variant/30 hover:shadow-lg transition-all flex flex-col sm:flex-row gap-4 items-center cursor-pointer"
+        onclick="openDishModal('Lavender Pistachio Tart', 'Crushed Sicilian pistachio crust filled with lavender cream and fresh blackberries.', 'bg5.webp')">
+        <img src="bg5.webp" alt="Lavender Pistachio Tart"
+          class="w-full sm:w-28 h-28 object-cover rounded-xl shrink-0" />
+        <div class="flex-1 w-full">
+          <h3 class="font-title-md text-title-md text-primary mb-2">Lavender Pistachio Tart</h3>
+          <p class="font-body-md text-sm text-on-surface-variant">Crushed Sicilian pistachio crust filled with lavender
+            cream and fresh blackberries.</p>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div
+        class="menu-item category-mains bg-surface p-6 rounded-2xl border border-outline-variant/30 hover:shadow-lg transition-all flex flex-col sm:flex-row gap-4 items-center cursor-pointer"
+        onclick="openDishModal('Wild Mushroom Gnocchi', 'Handmade potato gnocchi tossed with roasted chanterelles, sage butter, and shaved truffle.', 'bg3.jpg')">
+        <img src="bg3.jpg" alt="Wild Mushroom Gnocchi" class="w-full sm:w-28 h-28 object-cover rounded-xl shrink-0" />
+        <div class="flex-1 w-full">
+          <h3 class="font-title-md text-title-md text-primary mb-2">Wild Mushroom Gnocchi</h3>
+          <p class="font-body-md text-sm text-on-surface-variant">Handmade potato gnocchi tossed with roasted
+            chanterelles, sage butter, and shaved truffle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section (Contacts & Info kept intact) -->
+  <footer id="contact"
+    class="bg-surface-container dark:bg-surface-container-high full-width border-t border-outline-variant/20 grid grid-cols-1 md:grid-cols-4 gap-8 px-margin-mobile md:px-margin-desktop py-section-gap max-w-container-max mx-auto text-on-surface">
+    <div class="col-span-1 md:col-span-2 space-y-4">
+      <h2 class="font-display-lg text-headline-lg text-primary">Theo Cafe</h2>
+      <p class="text-on-surface-variant max-w-sm">A sanctuary of minimal aesthetic and botanical flavors. Find your zen
+        with every bite.</p>
+      <div class="pt-2 text-on-surface-variant font-label-sm">
+        © 2026 Theo Cafe. All rights reserved.
+      </div>
+    </div>
+
+    <div class="col-span-1">
+      <h4 class="font-title-md text-primary mb-4">Quick Links</h4>
+      <ul class="space-y-3">
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#home">Home</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#specials">Specials</a></li>
+        <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#menu">Menu</a></li>
+      </ul>
+    </div>
+
+    <div class="col-span-1 space-y-3">
+      <h4 class="font-title-md text-primary mb-4">Visit & Contact Us</h4>
+      <p class="text-on-surface-variant leading-relaxed">
+        <strong>Address:</strong><br />
+        123 Botanical Way, Greenwich, CT 06830
+      </p>
+      <p class="text-on-surface-variant leading-relaxed">
+        <strong>Email:</strong><br />
+        hello@theocafe.com
+      </p>
+      <p class="text-on-surface-variant leading-relaxed">
+        <strong>Phone:</strong><br />
+        +1 (555) 123-4567
+      </p>
+    </div>
+  </footer>
+
+  <!-- Philosophy Modal -->
+  <div id="philosophy-modal"
+    class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-surface rounded-3xl max-w-lg w-full p-8 shadow-2xl border border-outline-variant/30 relative">
+      <button onclick="closeModal('philosophy-modal')"
+        class="absolute top-6 right-6 text-on-surface-variant hover:text-primary p-1 rounded-full">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+      <span class="text-secondary font-label-sm uppercase tracking-wider mb-2 block font-semibold">Mindful Dining</span>
+      <h3 class="font-headline-lg text-headline-lg text-primary mb-4">Our Botanical Philosophy</h3>
+      <div class="space-y-4 text-on-surface-variant font-body-md text-sm leading-relaxed">
+        <p>At Theo Cafe, every ingredient is sourced with care from local organic farms. We believe in high aesthetic
+          mindfulness—creating clean, nutrient-dense dishes that nourish both body and spirit.</p>
+        <p>Our architectural dining room connects you directly to nature with zero emissions, recycled timber furniture,
+          and live natural foliage throughout the space.</p>
+      </div>
+      <div class="mt-6 text-right">
+        <button onclick="closeModal('philosophy-modal')"
+          class="bg-primary text-on-primary px-6 py-2.5 rounded-full text-sm font-semibold">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dish Detail Modal -->
+  <div id="dish-modal"
+    class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+    <div
+      class="bg-surface rounded-3xl max-w-md w-full overflow-hidden shadow-2xl border border-outline-variant/30 relative">
+      <button onclick="closeModal('dish-modal')"
+        class="absolute top-4 right-4 z-10 bg-surface/80 text-primary p-1.5 rounded-full shadow hover:bg-surface">
+        <span class="material-symbols-outlined text-xl">close</span>
+      </button>
+      <img id="dish-img" src="" alt="Dish preview" class="w-full h-56 object-cover" />
+      <div class="p-6">
+        <h3 id="dish-title" class="font-headline-lg text-headline-lg text-primary text-2xl mb-3"></h3>
+        <p id="dish-desc" class="font-body-md text-on-surface-variant text-sm mb-6 leading-relaxed"></p>
+        <button onclick="closeModal('dish-modal');"
+          class="w-full bg-primary text-on-primary py-3 rounded-full font-title-md hover:bg-primary-container transition-colors shadow">
+          Close Preview
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Logic -->
+  <script>
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.textContent = 'close';
+      } else {
+        menu.classList.add('hidden');
+        icon.textContent = 'menu';
+      }
+    }
+    document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+
+    // Modal helpers
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    // Dish modal
+    function openDishModal(title, desc, img) {
+      document.getElementById('dish-title').textContent = title;
+      document.getElementById('dish-desc').textContent = desc;
+      document.getElementById('dish-img').src = img;
+      openModal('dish-modal');
+    }
+
+    // Menu Category Filter
+    function filterMenu(category) {
+      const tabs = document.querySelectorAll('.menu-tab');
+      tabs.forEach(tab => {
+        tab.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        tab.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+
+      const activeTab = document.getElementById('tab-' + category);
+      if (activeTab) {
+        activeTab.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        activeTab.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      }
+
+      const items = document.querySelectorAll('.menu-item');
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains('category-' + category)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Dynamic Scroll Spy for Navigation Active Underline
+    document.addEventListener('DOMContentLoaded', () => {
+      // Scroll reveal observer
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
+
+      // Scroll spy observer for nav link underlines
+      const sections = document.querySelectorAll('section, footer');
+      const desktopLinks = document.querySelectorAll('#desktop-nav .nav-link');
+      const mobileLinks = document.querySelectorAll('#mobile-menu .mobile-nav-item');
+
+      function setActiveSection(currentSectionId) {
+        desktopLinks.forEach(link => {
+          if (link.getAttribute('data-section') === currentSectionId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+
+        mobileLinks.forEach(link => {
+          if (link.getAttribute('data-section') === currentSectionId) {
+            link.classList.add('text-primary', 'font-bold');
+            link.classList.remove('text-on-surface-variant');
+          } else {
+            link.classList.remove('text-primary', 'font-bold');
+            link.classList.add('text-on-surface-variant');
+          }
+        });
+      }
+
+      const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      sections.forEach(section => {
+        if (section.id) {
+          navObserver.observe(section);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
